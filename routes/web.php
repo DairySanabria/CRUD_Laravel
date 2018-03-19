@@ -27,5 +27,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/notas', 'NotaController@index');
     
     Route::get('/ojos', 'AuditorController@index');
+
+    
 });
 
