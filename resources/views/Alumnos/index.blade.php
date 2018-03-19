@@ -19,20 +19,22 @@
   </thead>
   <tbody>
     
-    
+    @if(!empty($alumnos))
 
-      @foreach($alumnos as $estudiante)
-<tr>
-      <th scope="row">{{$estudiante->id}}</th>
-      <td>{{$estudiante->nombre}}</td>
-      <td>{{$estudiante->apellido}}</td>
-      <td>{{$estudiante->cedula}}</td>
-       <td>{{$estudiante->direccion}}</td>
-      <td>{{$estudiante->correo_electronico}}</td>
-    </tr>  
-      @endforeach
+              @foreach($alumnos as $estudiante)
+                  <tr>
+                        <th scope="row">{{$estudiante->id}}</th>
+                        <td>{{$estudiante->nombre}}</td>
+                        <td>{{$estudiante->apellido}}</td>
+                        <td>{{$estudiante->cedula}}</td>
+                        <td>{{$estudiante->direccion}}</td>
+                        <td>{{$estudiante->correo_electronico}}</td>
+                      </tr>  
+              @endforeach
+    @else
 
-  
+    <tr><td>Esta vacio</td></tr>
+  @endif
 
     
   </tbody>

@@ -17,14 +17,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')->group(function() {
+    Route::get('/home', 'HomeController@index')->name('home');
 
+    Route::get('/alumnos', 'AlumnoController@index');
+    
+    Route::get('/profesor', 'ProfesorController@index');
+    
+    Route::get('/notas', 'NotaController@index');
+    
+    Route::get('/ojos', 'AuditorController@index');
+});
 
-
-Route::get('/alumnos', 'AlumnoController@index');
-
-Route::get('/profesor', 'ProfesorController@index');
-
-Route::get('/notas', 'NotaController@index');
-
-Route::get('/ojos', 'AuditorController@index');
