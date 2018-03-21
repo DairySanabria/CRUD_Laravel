@@ -1,5 +1,5 @@
 <?php
-
+ 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +28,13 @@ Route::middleware('auth')->group(function() {
     
     Route::get('/ojos', 'AuditorController@index');
 
+    Route::get('/formulario/alumnos', 'AlumnoController@create');
+
+    Route::get('/formulario/profesores', 'ProfesorController@create');
+
+    Route::post('/formulario/alumno', 'AlumnoController@store');
+
+    Route::post('/formulario/profesores', 'ProfesorController@store');
     
 });
 

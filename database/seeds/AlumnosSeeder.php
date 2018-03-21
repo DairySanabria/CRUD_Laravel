@@ -14,7 +14,7 @@ class AlumnosSeeder extends Seeder
     {
         
         $faker = Faker::Create();
-        for ($i=0; $i < 50; $i++){
+        for ($i=0; $i < 10; $i++){
 
         	\DB::table('alumnos')->insert(array(
 
