@@ -35,9 +35,51 @@ class ProfesorController extends Controller
 
 						return redirect()->to('/profesor');
 
-
 					}
 
-
+					public function show($id)
+					{
+						//dd($id);
+		
+						$buscar = Profesor::find($id);
+						//dd($buscar);
+						//return $buscar; 
+						//var_dump ($buscar);
+						//print_r ($buscar);
+		
+						return view('Profesor.edita', compact('buscar'));
+		
+					}
+		
+					public function update($id, Request $log) 
+					{
+		
+						$updates = Profesor::find($id);
+						$updates->nombre = $log->input('nombre');
+		
+						$updates->apellido = $log->input('apellido');
+		
+						$updates->cedula = $log->input('cedula');
+		
+						$updates->correo_electronico = $log->input('email');
+		
+						$updates->direccion = $log->input('direccion');
+		
+						$updates->save();
+		
+						return redirect()->to('/profesor');
+		
+					}
+		
+					public function destroy($id)
+					{
+						//dd($id);
+						$deletes = Profesor::find($id);
+						$deletes->delete();
+		
+						return redirect()->back();
+		
+		
+					}
 
 }

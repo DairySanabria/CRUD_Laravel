@@ -35,6 +35,18 @@ Route::middleware('auth')->group(function() {
     Route::post('/formulario/alumno', 'AlumnoController@store');
 
     Route::post('/formulario/profesores', 'ProfesorController@store');
+
+    Route::get('/formulario/alumno/edit/{id}', 'AlumnoController@show');
+
+    Route::any('/alumno/actual/{id}', 'AlumnoController@update');
+    
+    Route::get('/alumno/elimina/{id}', 'AlumnoController@destroy');
+
+    Route::get('/formulario/profe/edita/{id}', 'ProfesorController@show');
+
+    Route::any('/profe/actual/{id}', 'ProfesorController@update');
+
+    Route::get('/profe/elimina/{id}', 'ProfesorController@destroy');
     
 });
 
